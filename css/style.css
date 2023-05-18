@@ -1,0 +1,281 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap');
+
+
+:root{
+
+	/* =====	Colors	===== */
+	/* ====================== */
+
+	--first-color: #0E2124;
+	--second-color: #0F2225;
+	--bright-color: #45f3ff;
+	--background-dark: #041214;
+	--input-text-color: #0F2225;
+	--link-color: #8f8f8f;
+	--bright-hover-color: #00e0ef;
+
+	/* =====	Font Sizes	===== */
+	/* ====================== */
+	--h1-font-size: 2rem;
+	--h2-font-size: 1.5rem;
+	--h3-font-ssize: 1rem;
+	--h4-font-ssize: 0.75rem;
+	--font-size: 1rem
+
+}
+
+
+
+/*#region ========================		Base Classes	================================ */
+
+*
+{
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+	font-family: 'Poppins', sans-serif;
+}
+
+body 
+{
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	min-height: 100vh;
+	flex-direction: column;
+	background: var(--first-color);
+}
+
+form 
+{
+	position: absolute;
+	inset: 2px;
+	background: var(--background-dark);
+	padding: 50px 40px;
+	border-radius: 8px;
+	z-index: 2;
+	display: flex;
+	flex-direction: column;
+	gap: 15px;
+}
+
+/*#endregion  */
+
+
+
+
+/*#region ========================		Global Designs	================================ */
+
+.box 
+{
+	position: relative;
+	width: 520px;
+	height: 620px;
+	background: var(--second-color);
+	border-radius: 8px;
+	overflow: hidden;
+}
+
+
+.links 
+{
+	display: flex;
+	justify-content: space-between;
+}
+
+.submit
+{
+	border: none;
+	outline: none;
+	padding: 11px 25px;
+	background: var(--bright-color);
+	cursor: pointer;
+	border-radius: 4px;
+	font-weight: 600;
+	width: 100%;
+	margin-top: 10px;
+	transition: all 0.3s ease;
+	text-align: center;
+	text-decoration: none;
+	color: var(--input-text-color);
+	font-size: var(--h3-font-size);
+}
+
+
+
+
+
+
+.submit:hover
+{
+	background: var(--bright-hover-color);
+}
+
+.submit:active 
+{
+	opacity: 0.8;
+}
+
+.box::before 
+{
+	content: '';
+	z-index: 1;
+	position: absolute;
+	top: -50%;
+	left: -50%;
+	width: 520px;
+	height: 620px;
+	transform-origin: bottom right;
+	background: linear-gradient(0deg,transparent,var(--bright-color),var(--bright-color));
+	animation: animate 6s linear infinite;
+}
+
+.box::after 
+{
+	content: '';
+	z-index: 1;
+	position: absolute;
+	top: -50%;
+	left: -50%;
+	width: 520px;
+	height: 620px;
+	transform-origin: bottom right;
+	background: linear-gradient(0deg,transparent,var(--bright-color),var(--bright-color));
+	animation: animate 6s linear infinite;
+	animation-delay: -3s;
+}
+
+@keyframes animate 
+{
+	0%
+	{
+		transform: rotate(0deg);
+	}
+	100%
+	{
+		transform: rotate(360deg);
+	}
+}
+
+/*#endregion  */
+
+
+
+
+/*#region ========================		Login	================================ */
+
+form h2 
+{
+	color: var(--bright-color);
+	font-weight: 500;
+	text-align: center;
+	letter-spacing: 0.1em;
+	font-size: var(--h2-font-size);
+
+}
+
+form .inputBox 
+{
+	position: relative;
+	width: 100%;
+	margin-top: 35px;
+}
+
+.inputBox input 
+{
+	position: relative;
+	width: 100%;
+	padding: 20px 10px 10px;
+	background: transparent;
+	outline: none;
+	box-shadow: none;
+	border: none;
+	color: var(--input-text-color);
+	font-size: var(--font-size);
+	letter-spacing: 0.05em;
+	transition: 0.5s;
+	z-index: 10;
+}
+
+.inputBox span 
+{
+	position: absolute;
+	left: 0;
+	padding: 20px 0px 10px;
+	pointer-events: none;
+	font-size: var(--font-size);
+	color: var(--link-color);
+	letter-spacing: 0.05em;
+	transition: 0.5s;
+}
+
+.inputBox input:valid ~ span,
+.inputBox input:focus ~ span 
+{
+	color: var(--bright-color);
+	transform: translateX(0px) translateY(-34px);
+	font-size: var(--h4-font-ssize);
+}
+
+.inputBox i 
+{
+	position: absolute;
+	left: 0;
+	bottom: 0;
+	width: 100%;
+	height: 2px;
+	background: var(--bright-color);
+	border-radius: 4px;
+	overflow: hidden;
+	transition: 0.5s;
+	pointer-events: none;
+	z-index: 9;
+}
+
+.inputBox input:valid ~ i,
+.inputBox input:focus ~ i 
+{
+	height: 44px;
+}
+
+form  .inputCheckBox 
+{
+	margin: 10px 0;
+	font-size: 1rem;
+	color: var(--link-color);
+	text-decoration: beige;
+	transition: all 0.3s ease;
+}
+
+form .inputCheckBox:hover 
+{
+	color: var(--bright-color);
+}
+
+form  .inputCheckBox label,
+form  .inputCheckBox input{
+	cursor: pointer;
+}
+
+.links a 
+{
+	margin: 10px 0;
+	font-size: var(--h3-font-ssize);
+	color: var(--link-color);
+	text-decoration: beige;
+}
+
+.links a:hover, 
+.links a:nth-child(2)
+{
+	color: var(--bright-color);
+}
+
+.help-center-icon{
+	position: absolute;
+	bottom: 20px;
+	right: 20px;
+	font-size: 4rem;
+	color: var(--bright-color);
+}
+/*#endregion*/
