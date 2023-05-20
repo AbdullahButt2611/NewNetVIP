@@ -38,14 +38,25 @@
 	font-family: 'Poppins', sans-serif;
 }
 
-body 
-{
+body{
+	min-height: 100vh;
+	background: var(--first-color);
+}
+
+/* body.form_body{
 	display: flex;
 	justify-content: center;
 	align-items: center;
-	min-height: 100vh;
 	flex-direction: column;
-	background: var(--first-color);
+} */
+
+.body_wrapper 
+{
+	width: 100%;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex-direction: column;
 }
 
 form 
@@ -59,7 +70,30 @@ form
 	display: flex;
 	flex-direction: column;
 	gap: 15px;
+	overflow-y: auto;
 }
+
+form::-webkit-scrollbar {
+	width: 10px;
+}
+
+/* Styling of the scrollbar thumb (the draggable handle) */
+form::-webkit-scrollbar-thumb {
+	background: var(--bright-color);
+	border-radius: 5px;
+}
+
+/* Styling of the scrollbar track (the area behind the thumb) */
+form::-webkit-scrollbar-track {
+	background: var(--background-dark);
+}
+
+/* Styling when the scrollbar is hovered */
+form::-webkit-scrollbar-thumb:hover {
+	background: #555;
+}
+
+
 
 /*#endregion  */
 
@@ -103,6 +137,31 @@ form
 	font-size: var(--h3-font-size);
 }
 
+.section{
+	width: 100%;
+	padding: 2rem 2.5rem;
+	color: white;
+	display: flex;
+	flex-direction: column;
+	gap: 2rem;
+}
+
+.section__title{
+	font-size: var(--bigger-font-size);
+	color: var(--bright-color);
+	margin-bottom: 2rem;
+}
+
+.section__subtitle{
+	font-size: var(--h2-font-size);
+	margin-bottom: 1rem;
+}
+
+.plain__text{
+	text-align: justify;
+	font-size: var(--h3-font-size);
+	font-weight: 300;
+}
 
 
 
@@ -285,6 +344,245 @@ form  .inputCheckBox input{
 
 
 
+/*#region ========================		Sidebar	================================ */
+.sidebar{
+	position: fixed;
+	top: 0;
+	left: 0;
+	height: 100%;
+	width: 260px;
+	background: var(--background-dark);
+	z-index: 100;
+	transition: all 0.5s ease;
+  }
+  .sidebar.close{
+	width: 78px;
+  }
+  .sidebar .logo-details{
+	height: 60px;
+	width: 100%;
+	display: flex;
+	align-items: center;
+	gap: 10px;
+  }
+  .sidebar .logo-details img{
+	height: 50px;
+	width: 50px;
+  }
+  .sidebar .logo-details .logo_name{
+	font-size: 22px;
+	color: #fff;
+	font-weight: 600;
+	transition: 0.3s ease;
+	transition-delay: 0.1s;
+  }
+  .sidebar.close .logo-details .logo_name{
+	transition-delay: 0s;
+	opacity: 0;
+	pointer-events: none;
+  }
+  .sidebar .nav-links{
+	height: 100%;
+	padding: 30px 0 150px 0;
+	overflow: auto;
+  }
+  .sidebar.close .nav-links{
+	overflow: visible;
+  }
+  .sidebar .nav-links::-webkit-scrollbar{
+	display: none;
+  }
+  .sidebar .nav-links li{
+	position: relative;
+	list-style: none;
+	transition: all 0.4s ease;
+  }
+  .sidebar .nav-links li:hover{
+	background: #1d1b31;
+  }
+  .sidebar .nav-links li .iocn-link{
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+  }
+  .sidebar.close .nav-links li .iocn-link{
+	display: block
+  }
+  .sidebar .nav-links li i{
+	height: 50px;
+	min-width: 78px;
+	text-align: center;
+	line-height: 50px;
+	color: #fff;
+	font-size: 20px;
+	cursor: pointer;
+	transition: all 0.3s ease;
+  }
+  .sidebar .nav-links li.showMenu i.arrow{
+	transform: rotate(-180deg);
+  }
+  .sidebar.close .nav-links i.arrow{
+	display: none;
+  }
+  .sidebar .nav-links li a{
+	display: flex;
+	align-items: center;
+	text-decoration: none;
+  }
+  .sidebar .nav-links li a .link_name{
+	font-size: 18px;
+	font-weight: 400;
+	color: #fff;
+	transition: all 0.4s ease;
+  }
+  .sidebar.close .nav-links li a .link_name{
+	opacity: 0;
+	pointer-events: none;
+  }
+  .sidebar .nav-links li .sub-menu{
+	padding: 6px 6px 14px 80px;
+	margin-top: -10px;
+	background: #1d1b31;
+	display: none;
+  }
+  .sidebar .nav-links li.showMenu .sub-menu{
+	display: block;
+  }
+  .sidebar .nav-links li .sub-menu a{
+	color: #fff;
+	font-size: 15px;
+	padding: 5px 0;
+	white-space: nowrap;
+	opacity: 0.6;
+	transition: all 0.3s ease;
+  }
+  .sidebar .nav-links li .sub-menu a:hover{
+	opacity: 1;
+  }
+  .sidebar.close .nav-links li .sub-menu{
+	position: absolute;
+	left: 100%;
+	top: -10px;
+	margin-top: 0;
+	padding: 10px 20px;
+	border-radius: 0 6px 6px 0;
+	opacity: 0;
+	display: block;
+	pointer-events: none;
+	transition: 0s;
+  }
+  .sidebar.close .nav-links li:hover .sub-menu{
+	top: 0;
+	opacity: 1;
+	pointer-events: auto;
+	transition: all 0.4s ease;
+  }
+  .sidebar .nav-links li .sub-menu .link_name{
+	display: none;
+  }
+  .sidebar.close .nav-links li .sub-menu .link_name{
+	font-size: 18px;
+	opacity: 1;
+	display: block;
+  }
+  .sidebar .nav-links li .sub-menu.blank{
+	opacity: 1;
+	pointer-events: auto;
+	padding: 3px 20px 6px 16px;
+	opacity: 0;
+	pointer-events: none;
+  }
+  .sidebar .nav-links li:hover .sub-menu.blank{
+	top: 50%;
+	transform: translateY(-50%);
+  }
+  .sidebar .profile-details{
+	position: fixed;
+	bottom: 0;
+	width: 260px;
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	background: #1d1b31;
+	padding: 12px 0;
+	transition: all 0.5s ease;
+  }
+  .sidebar.close .profile-details{
+	background: none;
+  }
+  .sidebar.close .profile-details{
+	width: 78px;
+  }
+  .sidebar .profile-details .profile-content{
+	display: flex;
+	align-items: center;
+  }
+  .sidebar .profile-details img{
+	height: 52px;
+	width: 52px;
+	object-fit: cover;
+	border-radius: 16px;
+	margin: 0 14px 0 12px;
+	background: #1d1b31;
+	transition: all 0.5s ease;
+  }
+  .sidebar.close .profile-details img{
+	padding: 10px;
+  }
+  .sidebar .profile-details .profile_name,
+  .sidebar .profile-details .job{
+	color: #fff;
+	font-size: 18px;
+	font-weight: 500;
+	white-space: nowrap;
+  }
+  .sidebar.close .profile-details i,
+  .sidebar.close .profile-details .profile_name,
+  .sidebar.close .profile-details .job{
+	display: none;
+  }
+  .sidebar .profile-details .job{
+	font-size: 12px;
+  }
+  .home-section{
+	position: relative;
+	background: var(--first-color);
+	height: 100vh;
+	left: 260px;
+	width: calc(100% - 260px);
+	transition: all 0.5s ease;
+	padding: 12px;
+  }
+  .sidebar.close ~ .home-section{
+	left: 78px;
+	width: calc(100% - 78px);
+  }
+  .home-content{
+	display: flex;
+	flex-direction: column;
+	align-items: flex-start;
+	justify-content: flex-start;
+	flex-wrap: wrap;
+  }
+  .home-section .home-content .bx-menu{
+	color: white;
+	font-size: 35px;
+  }
+
+  .home-section .home-content .bx-menu{
+	cursor: pointer;
+	margin-right: 10px;
+  }
+
+  .home-section .home-content .text{
+	width: 120px;
+  }
+/*#endregion  */
+
+
+
+
+
 /*#region ========================		Responsiveness	================================ */
 
 
@@ -292,13 +590,14 @@ form  .inputCheckBox input{
 	@media screen and (max-width: 992px) {
 
 		/* ========================		 Base Classes 	======================*/
-		body{
+		.body_wrapper{
 			width: 100vw;
 		}
 
 		form{
 			justify-content: center;
 		}
+		
 
 
 		/* ========================		 Global Designs 	======================*/
@@ -315,6 +614,18 @@ form  .inputCheckBox input{
 			width: 450px;
 		}
 
+		.section{
+			padding: 2rem 1rem;
+		}
+
+		.section__title{
+			font-size: var(--h1-font-size);
+		}
+		
+		.section__subtitle{
+			font-size: var(--h2-font-size);
+		}
+
 
 		/* ========================		 Login Page 	======================*/
 		.help-center-icon{
@@ -322,6 +633,10 @@ form  .inputCheckBox input{
 			top: 10px;
 			right: -220px;
 			position: relative;
+		}
+
+		form.signup h2{
+			margin-top: 15rem;
 		}
 
 	}
@@ -332,24 +647,36 @@ form  .inputCheckBox input{
 	/* ========================		Small Screens	================================ */
 	@media screen and (max-width: 422px) {
 
-		
+		/* ========================		 Base Classes 	======================*/
+		form::-webkit-scrollbar {
+			display: none;
+		}
+
 
 
 		/* ========================		 Global Designs 	======================*/
 		.box{
 			width: 350px;
-			height: 730px;
+			height: 817px;
 		}
 
 		
 		.box::after{
 			width: 350px;
-			height: 730px;
+			height: 817px;
 		}
 
 		.box::before{
 			width: 350px;
-			height: 730px;
+			height: 817px;
+		}
+
+		.section{
+			padding: 2rem 0.5rem;
+		}
+		
+		.plain__text{
+			padding: 0 0.8rem;
 		}
 
 
@@ -358,6 +685,76 @@ form  .inputCheckBox input{
 			font-size: var(--bigger-font-size);
 			right: -160px;
 		}
+
+		/* ========================		 Sidebar 	====================== */
+		.sidebar{
+			width: 240px;
+		  }
+		  .sidebar.close{
+			width: 78px;
+		  }
+		  .sidebar .profile-details{
+			width: 240px;
+		  }
+		  .sidebar.close .profile-details{
+			background: none;
+		  }
+		  .sidebar.close .profile-details{
+			width: 78px;
+		  }
+		  .home-section{
+			left: 240px;
+			width: calc(100% - 240px);
+		  }
+		  .sidebar.close ~ .home-section{
+			left: 78px;
+			width: calc(100% - 78px);
+		  }
+
+	}
+	
+
+
+
+	/* ========================		Fold Screens	================================ */
+	@media screen and (max-width: 290px) {
+
+		/* ========================		 Base Classes 	======================*/
+		form{
+			padding: 50px 8px;
+		}
+
+
+		/* ========================		 Global Designs 	======================*/
+		.box{
+			width: 250px;
+		}
+
+		
+		.box::after{
+			width: 250px;
+		}
+
+		.box::before{
+			width: 250px;
+		}
+
+		.links{
+			flex-direction: column;
+			justify-content: center;
+			align-items: center;
+		}
+
+		.section{
+			padding: 2rem 0;
+		}
+
+
+		/* ========================		 Login Page 	====================== */
+		.help-center-icon{
+			right: -90px;
+		}
+		
 
 	}
 
