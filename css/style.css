@@ -163,6 +163,10 @@ form::-webkit-scrollbar-thumb:hover {
 	font-weight: 300;
 }
 
+.home-content .links{
+	z-index: 1000;
+}
+
 
 
 
@@ -563,6 +567,7 @@ form  .inputCheckBox input{
 	align-items: flex-start;
 	justify-content: flex-start;
 	flex-wrap: wrap;
+	gap: 2rem;
   }
   .home-section .home-content .bx-menu{
 	color: white;
@@ -579,6 +584,140 @@ form  .inputCheckBox input{
   }
 /*#endregion  */
 
+
+
+
+
+/*#region ========================		Home Page	================================ */
+
+
+	/*	=============		Hero Section	================  */
+	.home_hero_section{
+		height: 100vh;
+		margin-top: -3rem;
+		padding: 0;
+	}
+	
+	.Section_top{
+		width: 100%;
+		height: 100%;
+		overflow: hidden;
+		position: relative;
+		background-image: url("../Assets/Images/hero_1.jpg");
+		background-position: center;
+		background-repeat: no-repeat;
+		background-size: contain;
+		animation: change 20s infinite ease-in-out;
+	}
+
+	@keyframes change{
+		0%
+		{
+			background-image: url("../Assets/Images/hero_1.jpg");
+		}
+		20%
+		{
+			background-image: url("../Assets/Images/hero_2.jpg");
+		}
+		40%
+		{
+			background-image: url("../Assets/Images/hero_3.jpg");
+		}
+		60%
+		{
+			background-image: url("../Assets/Images/hero_4.jpg");
+		}
+		80%
+		{
+			background-image: url("../Assets/Images/hero_5.jpg");
+		}
+		100%
+		{
+			background-image: url("../Assets/Images/hero_1.jpg");
+		}
+	}
+
+	/*	=============		Conversion Section	================  */
+	.home_conversion_section{
+		border: 4px solid var(--bright-color);
+		border-radius: 2rem;
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		align-items: center;
+		gap: 2rem;
+		padding: 2rem 10rem;
+	}
+
+	.conversion__heading{
+		width: 100%;
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+		text-align: center;
+	}
+
+	.home_conversion_section .value{
+		font-size: var(--h1-font-size);
+	}
+
+	.home_conversion_section .percent_value p{
+		font-size: var(--h3-font-size);
+		color: var(--bright-color);
+	}
+
+	.home_conversion_section .percent_value p.negative{
+		color: #f82c3b;
+	}
+
+	.home_link_section{
+		border: 4px solid var(--bright-color);
+		border-radius: 2rem;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		padding: 4rem 10rem;
+	}
+	
+	.home_link_section .links__grid{
+		width: 100%;
+		display: grid;
+		grid-template-columns: repeat(4, 1fr);
+		gap: 7rem;
+	}
+
+	.home_link_section .links__grid .link__container{
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		align-items: center;
+		gap: 1rem;
+		text-decoration: none;
+		color: white;
+		padding: 2rem;
+		border-radius: 3rem;
+		transition: all 300ms ease;
+	}
+
+	.home_link_section .links__grid .link__container:hover{
+		background-color: var(--background-dark);
+	}
+
+	.home_link_section .links__grid .link__container i{
+		font-size: var(--biggest-font-size);
+		color: var(--bright-color);
+
+	}
+
+	.home_link_section .links__grid .link__container p{
+		font-size: var(--h3-font-size);
+		text-align: center;
+	}
+
+
+
+
+/*#endregion  */
 
 
 
@@ -634,9 +773,38 @@ form  .inputCheckBox input{
 			right: -220px;
 			position: relative;
 		}
-
+		
 		form.signup h2{
 			margin-top: 15rem;
+		}
+
+
+		/* ========================		 Home Page 	======================*/
+		.home_hero_section{
+			padding: 0;
+			height: 45vh;
+			width: 100%;
+		}
+	
+		.conversion__heading{
+			font-size: var(--h4-font-size);
+		}
+	
+		.home_conversion_section .value{
+			font-size: var(--h2-font-size);
+		}
+	
+		.home_conversion_section .percent_value p{
+			font-size: var(--h4-font-size);
+		}
+
+		.home_link_section{
+			padding: 1rem 2rem;
+		}
+		
+		.home_link_section .links__grid{
+			grid-template-columns: repeat(2, 1fr);
+			gap: 0.5rem;
 		}
 
 	}
@@ -686,36 +854,65 @@ form  .inputCheckBox input{
 			right: -160px;
 		}
 
+
 		/* ========================		 Sidebar 	====================== */
 		.sidebar{
 			width: 240px;
-		  }
-		  .sidebar.close{
+		}
+		.sidebar.close{
 			width: 78px;
 		  }
 		  .sidebar .profile-details{
 			width: 240px;
-		  }
-		  .sidebar.close .profile-details{
+		}
+		.sidebar.close .profile-details{
 			background: none;
-		  }
-		  .sidebar.close .profile-details{
+		}
+		.sidebar.close .profile-details{
 			width: 78px;
-		  }
-		  .home-section{
+		}
+		.home-section{
 			left: 240px;
 			width: calc(100% - 240px);
-		  }
-		  .sidebar.close ~ .home-section{
+		}
+		.sidebar.close ~ .home-section{
 			left: 78px;
 			width: calc(100% - 78px);
-		  }
+		}
 
+
+		/* ========================		 Home Page 	====================== */
+		.home_hero_section{
+			padding: 0;
+			height: 30vh;
+			width: 100%;
+		}
+
+		.conversion__heading{
+			font-size: 0.75rem;
+		}
+	
+		.home_conversion_section .value{
+			font-size: var(--h4-font-size);
+		}
+	
+		.home_conversion_section .percent_value p{
+			font-size: var(--h4-font-size);
+		}
+
+		.home_link_section{
+			padding: 1rem;
+		}
+		
+		.home_link_section .links__grid{
+			gap: 0rem;
+		}
+		
 	}
 	
-
-
-
+	
+	
+	
 	/* ========================		Fold Screens	================================ */
 	@media screen and (max-width: 290px) {
 
@@ -753,6 +950,38 @@ form  .inputCheckBox input{
 		/* ========================		 Login Page 	====================== */
 		.help-center-icon{
 			right: -90px;
+		}
+
+
+		/* ========================		 Home Page 	====================== */
+		.home_hero_section{
+			padding: 0;
+			height: 30vh;
+			width: 100%;
+		}
+
+		.conversion__heading{
+			font-size: 0.35rem;
+		}
+	
+		.home_conversion_section .value{
+			font-size: 0.5rem;
+		}
+	
+		.home_conversion_section .percent_value p{
+			font-size: var(--h4-font-size);
+		}
+
+		.home_conversion_section{
+			padding: 1rem 12px;
+		}
+
+		.home_link_section{
+			padding: 1rem;
+		}
+		
+		.home_link_section .links__grid{
+			grid-template-columns: repeat(1, 1fr);
 		}
 		
 
