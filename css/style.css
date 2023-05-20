@@ -16,6 +16,8 @@
 
 	/* =====	Font Sizes	===== */
 	/* ====================== */
+	--biggest-font-size: 4rem;
+	--bigger-font-size: 3rem;
 	--h1-font-size: 2rem;
 	--h2-font-size: 1.5rem;
 	--h3-font-ssize: 1rem;
@@ -272,10 +274,99 @@ form  .inputCheckBox input{
 }
 
 .help-center-icon{
-	position: absolute;
+	position: fixed;
 	bottom: 20px;
 	right: 20px;
-	font-size: 4rem;
+	font-size: var(--biggest-font-size);
 	color: var(--bright-color);
 }
 /*#endregion*/
+
+
+
+
+/*#region ========================		Responsiveness	================================ */
+
+
+	/* ========================		Moderate Screens	================================ */
+	@media screen and (max-width: 992px) {
+
+		/* ========================		 Base Classes 	======================*/
+		body{
+			width: 100vw;
+		}
+
+		form{
+			justify-content: center;
+		}
+
+
+		/* ========================		 Global Designs 	======================*/
+		.box{
+			margin-top: var(--h2-font-size);
+			width: 450px;
+		}
+
+		.box::after{
+			width: 450px;
+		}
+
+		.box::before{
+			width: 450px;
+		}
+
+
+		/* ========================		 Login Page 	======================*/
+		.help-center-icon{
+			font-size: var(--h1-font-size);
+			top: 10px;
+			right: -220px;
+			position: relative;
+		}
+
+	}
+	
+
+
+
+	/* ========================		Small Screens	================================ */
+	@media screen and (max-width: 422px) {
+
+		
+
+
+		/* ========================		 Global Designs 	======================*/
+		.box{
+			width: 350px;
+			height: 730px;
+		}
+
+		
+		.box::after{
+			width: 350px;
+			height: 730px;
+		}
+
+		.box::before{
+			width: 350px;
+			height: 730px;
+		}
+
+
+		/* ========================		 Login Page 	====================== */
+		.help-center-icon{
+			font-size: var(--bigger-font-size);
+			right: -160px;
+		}
+
+	}
+
+
+
+/*#endregion*/
+
+
+
+
+
+
