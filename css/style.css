@@ -808,7 +808,7 @@ form  .inputCheckBox input{
 	
 	.left-btn{
 		left: 0;
-		background: linear-gradient(to left, transparent, white 80%);
+		background: linear-gradient(to left, transparent, var(--bright-color) 80%);
 		border-top-left-radius: 30px;
 		border-bottom-left-radius: 30px;
 		display: none;
@@ -816,7 +816,7 @@ form  .inputCheckBox input{
 	
 	.right-btn{
 		right: 0;
-		background: linear-gradient(to right, transparent, white 80%);
+		background: linear-gradient(to right, transparent, var(--bright-color) 80%);
 		border-top-right-radius: 30px;
 		border-bottom-right-radius: 30px;
 	}
@@ -859,7 +859,8 @@ form  .inputCheckBox input{
 		align-items: center;
 	}
 
-	.tab__table .row{
+	.tab__table .row,
+	.home_members .row{
 		display: grid;
 		width: 100%;
 		grid-template-columns: repeat(3, 1fr);
@@ -875,11 +876,13 @@ form  .inputCheckBox input{
 		text-align: center;
 	}
 	
-	.tab__table .row:not(:first-child){
+	.tab__table .row:not(:first-child),
+	.home_members .row:not(:first-child){
 		border-bottom: 1px solid var(--bright-color);
 	}
 
-	.tab__table .row > p{
+	.tab__table .row > p,
+	.home_members .row > p{
 		color: var(--bright-hover-color);
 		text-align: center;
 		padding: 1rem;
@@ -913,11 +916,13 @@ form  .inputCheckBox input{
 		border-radius: 1rem;
 	}
 
-	.dynamic_member .row p:nth-child(2){
+	.dynamic_member .row p:nth-child(2),
+	.home_members .row p:nth-child(2){
 		color: #f82c3b;
 	}
 
-	.dynamic_member .row p{
+	.dynamic_member .row p,
+	.home_members .row p{
 		color: white;
 	}
 
@@ -939,8 +944,6 @@ form  .inputCheckBox input{
 
 
 /*#endregion  */
-
-
 
 
 
@@ -993,6 +996,249 @@ form  .inputCheckBox input{
 /*#endregion  */
 
 
+
+
+
+
+
+/*#region ========================		Quantify	================================ */
+
+	.quantify_data_section{
+		flex-direction: row;
+		justify-content: space-around;
+	}
+
+	.quantify_data_content{
+		display: flex;
+		flex-direction: column;
+		gap: 0.5rem;
+		justify-content: center;
+		align-items: center;
+	}
+
+	.quantify_data_content h3{
+		color: var(--link-color);
+	}
+
+	.quantify_data_content span{
+		font-size: var(--h1-font-size);
+	}
+
+	.quantify_add{
+		padding: 3rem;
+		background: url("https://newnetvip.com/images/qiquan3/lianghua_btn.gif") 0 0/100% 100% no-repeat;
+		font-weight: 700;
+		color: var(--background-dark);
+		font-size: var(--h2-font-size);
+		text-decoration: none;
+		position: relative;
+		margin-top: 3rem;
+	}
+
+	.quantify_add::before{
+		position: absolute;
+		top: -3.5rem;
+		border-radius: 1rem;
+		padding: 0.7rem 2rem;
+		background-color: var(--bright-color);
+		color: var(--background-dark);
+		font-weight: 500;
+		font-size: var(--h3-font-ssize);
+		right: 0;
+		content: "Experience 90 Days";
+	}
+
+	.carousel_section{
+		flex-direction: column;
+		gap: 4rem;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		width: 100%;
+	}
+
+	.mySlides {
+		display: none;
+	}
+
+	.slide_image_section{
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		align-items: center;
+		gap: 2rem;
+		width: 100%;
+	}
+
+	.level_state_flex{
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		gap: 2rem;
+	}
+
+	.slide_image_section .level_state{
+		color: #ecb464;
+    	font-size: var(--h2-font-size);
+	}
+
+	.mySlides .line{
+		display: block;
+		width: 100%;
+		height: 2px;
+		background-color: var(--bright-color);
+	}
+
+	.slide_content_flex{
+		margin-top: 2rem;
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		align-items: center;
+	}
+
+	.slide_content_grid{
+		display: grid;
+		grid-template-columns: repeat(2, 1fr);
+		place-items: center;
+		justify-items: flex-start;
+		gap: 3rem;
+		padding: 2rem;
+	}
+
+	.plotonic_data{
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		gap: 1rem;
+	}
+
+	.plotonic_data i{
+		font-size: var(--bigger-font-size);
+	}
+
+	.plotonic_content p{
+		color: var(--link-color);
+		font-size: var(--h3-font-ssize);
+	}
+
+	.slide_content_grid .state{
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		width: 100%;
+		padding: 1rem;
+		background-color: var(--background-dark);
+		border-radius: 1rem;
+	}
+	
+	
+	.slideshow-container {
+	  max-width: 80%;
+	  position: relative;
+	  margin: auto;
+	}
+
+	/* Next & previous buttons */
+	.prev, .next {
+	  cursor: pointer;
+	  position: absolute;
+	  top: 50%;
+	  width: auto;
+	  padding: 16px;
+	  margin-top: -22px;
+	  color: white;
+	  font-weight: bold;
+	  font-size: 18px;
+	  transition: 0.6s ease;
+	  border-radius: 0 3px 3px 0;
+	  user-select: none;
+	}
+
+	/* Position the "next button" to the right */
+	.next {
+	  right: 0;
+	  border-radius: 3px 0 0 3px;
+	}
+
+	/* On hover, add a black background color with a little bit see-through */
+	.prev:hover, .next:hover {
+	  background-color: rgba(0,0,0,0.8);
+	}
+
+	/* Caption text */
+	.text {
+	  color: #f2f2f2;
+	  font-size: 15px;
+	  padding: 8px 12px;
+	  position: absolute;
+	  bottom: 8px;
+	  width: 100%;
+	  text-align: center;
+	}
+
+	/* Number text (1/3 etc) */
+	.numbertext {
+	  color: #f2f2f2;
+	  font-size: 12px;
+	  padding: 8px 12px;
+	  position: absolute;
+	  top: 0;
+	}
+
+	/* The dots/bullets/indicators */
+	.dot {
+	  cursor: pointer;
+	  height: 15px;
+	  width: 15px;
+	  margin: 0 2px;
+	  background-color: #bbb;
+	  border-radius: 50%;
+	  display: inline-block;
+	  transition: background-color 0.6s ease;
+	}
+
+	.active, .dot:hover {
+	  background-color: #717171;
+	}
+
+	/* Fading animation */
+	.fade {
+	  -webkit-animation-name: fade;
+	  -webkit-animation-duration: 1.5s;
+	  animation-name: fade;
+	  animation-duration: 1.5s;
+	}
+
+	@-webkit-keyframes fade {
+	  from {opacity: .4} 
+	  to {opacity: 1}
+	}
+
+	@keyframes fade {
+	  from {opacity: .4} 
+	  to {opacity: 1}
+	}
+
+	/* On smaller screens, decrease text size */
+	@media only screen and (max-width: 300px) {
+
+	  	.prev, .next,.text {font-size: 11px}
+
+		.dot{
+			height: 10px;
+			width: 10px;
+		}
+
+	}
+
+	@media only screen and (max-width: 500px) {
+	  .prev, .next,.text {font-size: 14px}
+	}
+	
+
+
+/*#endregion  */
 
 
 
@@ -1105,17 +1351,44 @@ form  .inputCheckBox input{
 			width: 100%;
 			padding: 0 2rem;
 		}
-
+		
 		.customer_section{
 			margin-top: 3rem;
 			flex-direction: column-reverse;
 			height: 80vh;
 		}
-
+		
 		.customer_section .links a{
 			padding: 1rem 2rem;
 		}
 
+
+		/* ========================		 Quantify Page 	======================*/
+		.quantify_section > div:first-child .section__title{
+			text-align: center;
+		}
+
+		.quantify_data_content h3{
+			font-size: var(--h3-font-ssize);
+			text-align: center;
+		}
+
+		.quantify_data_content span{
+			font-size: var(--h2-font-size);
+		}
+
+		.quantify_add{
+			text-align: center;
+		}
+
+		.home_members .row.table__head{
+			font-size: var(--h4-font-ssize);
+		}
+
+		.level_state{
+			text-align: center;
+		}
+		
 	}
 	
 
@@ -1241,6 +1514,47 @@ form  .inputCheckBox input{
 		.customer_section .links a{
 			text-align: center;
 			padding: 1rem 2rem;
+		}
+
+
+		.home_conversion_section{
+			gap: 0.5rem;
+		}
+
+		.quantify_data_section{
+			flex-wrap: wrap;
+			gap: 2rem;
+		}
+
+		.quantify_add{
+			font-size: var(--h3-font-ssize);
+		}
+
+		.quantify_add::before{
+			padding: 0.5rem 1rem;
+			font-size: var(--h4-font-ssize);
+			top: -2.5rem;
+		} 
+
+		.slide_image_section img{
+			width: 100%;
+		}
+
+		.slide_content_grid{
+			padding: 0 0.2rem;
+			gap: 1rem;
+		}
+
+		.home_members{
+			overflow-x: auto;
+		}
+
+		.home_members .row{
+			width: 171%;
+		}
+
+		.home_members .row{
+			gap: 4rem;
 		}
 		
 	}
