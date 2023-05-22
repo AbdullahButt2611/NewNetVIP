@@ -1246,6 +1246,145 @@ form  .inputCheckBox input{
 
 
 
+/*#region ========================		Myshare	================================ */
+
+	.myshare_section .section__title,
+	.myshare_section > div:first-child p{
+		text-align: center;
+	}
+
+	.download_div{
+		margin: 2rem 0;
+		width: 100%;
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		align-items: center;
+	}
+
+	.download_div > div{
+		width: 40%;
+		padding: 4rem 4rem;
+		background-color: var(--background-dark);
+		display: flex;
+		gap: 2rem;
+		flex-direction: column;
+		justify-content: center;
+		align-items: center;
+	}
+
+	.download_div img{
+		width: 15rem;
+	}
+
+	.link_inputfield {
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		align-items: flex-start;
+		width: 100%;
+		padding: 1rem 2rem;
+		gap: 0.5rem;
+	}
+
+	.link_inputfield p{
+		color: var(--link-color);
+	}
+
+	.link_inputfield div{
+		width: 100%;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		height: 2.5rem;
+	}
+
+	.link_inputfield div input{
+		width: 80%;
+		height: 100%;
+		border: none;
+		outline: none;
+		background-color: var(--first-color);
+		border: 1px solid var(--bright-color);
+		color: white;
+		padding: 0 1rem;
+	}
+
+	.link_inputfield div button{
+		width: 20%;
+		height: 100%;
+		border: none;
+		outline: none;
+		cursor: pointer;
+		background-color: var(--bright-color);
+		color: var(--background-dark);
+		transition: all 300ms ease;
+	}
+
+	.link_inputfield div button:hover{
+		background-color: var(--bright-hover-color);
+	}
+
+	.download_div > div > button{
+		width: 87%;
+		padding: 1rem;
+		border: none;
+		outline: none;
+		background-color: var(--first-color);
+		border: 1px solid var(--bright-color);
+		color: var(--bright-color);
+		cursor: pointer;
+		transition: all 300ms ease;
+	}
+
+	.download_div > div > button:hover{
+		background-color: var(--bright-color);
+		color: var(--background-dark);
+	}
+
+	.share_links{
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		background-color: var(--background-dark);
+		width: 100%;
+		padding: 4rem 0;
+	}
+
+	.share_links .link-grid{
+		display: grid;
+		grid-template-columns: repeat(2, 1fr);
+		place-items: center;
+		column-gap: 15rem;
+		row-gap: 3rem;
+	}
+
+	.social_div{
+		padding: 1rem 3rem;
+		border-radius: 2rem;
+		transition: all 300ms ease;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		gap: 1rem;
+		text-decoration: none;
+		color: white;
+		font-size: var(--h2-font-size);
+	}
+
+	.social_div:hover{
+		background-color: var(--first-color);
+	}
+
+	.social_div img{
+		width: 3rem;
+	}
+
+/*#endregion  */
+
+
+
+
 /*#region ========================		Responsiveness	================================ */
 
 
@@ -1388,6 +1527,30 @@ form  .inputCheckBox input{
 		.level_state{
 			text-align: center;
 		}
+
+		/* ========================		 My Share Page 	======================*/
+		.share_links{
+			width: 100%;
+		}
+
+		.share_links .link-grid{
+			grid-template-columns: repeat(1, 1fr);
+			justify-items: flex-start;
+		}
+
+		.myshare_section .section__title{
+			font-size: var(--h2-font-size);
+		}
+
+		.myshare_section{
+			width: 100%;
+		}
+
+		.download_div > div{
+			width: 100%;
+			padding: 4rem 0;
+		}
+
 		
 	}
 	
