@@ -1198,7 +1198,7 @@ form  .inputCheckBox input{
 	  transition: background-color 0.6s ease;
 	}
 
-	.active, .dot:hover {
+	.dot.active, .dot:hover {
 	  background-color: #717171;
 	}
 
@@ -1385,6 +1385,187 @@ form  .inputCheckBox input{
 
 
 
+
+
+
+
+/*#region ========================		My Account	================================ */
+
+
+	.user_account_detail{
+		justify-content: space-around;
+		flex-direction: row;
+	}
+
+	.user_account_detail > div{
+		width: 50%;
+		padding: 2rem;
+		border-radius: 2rem;
+	}
+
+	.account_type_detail{
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		align-items: center;
+		gap: 0.7rem;
+		background-color: var(--background-dark);
+
+	}
+
+	.account_type_detail .user_id{
+		display: flex;
+		gap: 0.7rem;
+		font-size: var(--h1-font-size);
+	}
+
+	.account_type_detail .user_id span{
+		color: var(--bright-color);
+	}
+
+	.badge_container{
+		display: flex;
+		font-size: var(--h2-font-size);
+		justify-content: center;
+		align-items: center;
+		gap: 0.5rem;
+	}
+
+	.badge_container i{
+		font-size: var(--h1-font-size);
+	}
+
+	.account_type_detail a{
+		text-decoration: none;
+		color: var(--link-color);
+		font-size: var(--h2-font-size);
+		transition: all 300ms ease;
+	}
+
+	.account_type_detail a:hover{
+		color: var(--bright-hover-color);
+		letter-spacing: 5px;
+	}
+
+	.balance_record{
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		flex-direction: column;
+		gap: 0.7rem;
+		border: 3px solid var(--background-dark);
+	}
+
+	.balance_record h2{
+		font-size: var(--h2-font-size);
+	}
+
+	.balance_record .balance{
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		gap: 2rem;
+	}
+
+	.balance_record .balance h1{
+		font-size: var(--h1-font-size);
+		color: var(--bright-color);
+	}
+
+	.balance_record .balance p{
+		font-size: var(--h2-font-size);
+		font-weight: 300;
+	}
+
+	.tab .balance_record{
+		padding: 2rem;
+		border-radius: 2rem;
+		background-color: var(--background-dark);
+	}
+
+	.tab .balance_record .links{
+		margin-top: 3rem;
+		display: flex;
+		width: 100%;
+		justify-content: space-around;
+	}
+
+	.tab .balance_record .links a{
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		gap: 1rem;
+		font-size: var(--h2-font-size);
+		color: white;
+		transition: all 300ms ease;
+	}
+
+	.tab .balance_record .links a i{
+		font-size: var(--h1-font-size);
+	}
+
+	.tab .balance_record .links a:hover{
+		color: var(--bright-hover-color);
+	}
+
+	.tab .inputs{
+		margin-top: 2rem;
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+		gap: 2rem;
+	}
+
+	.tab .inputs .input_box_field{
+		display: flex;
+		justify-content: flex-start;
+		gap: 1rem;
+		align-items: center;
+		width: 70%;
+		height: 2rem;
+		padding: 2rem;
+		border-radius: 1rem;
+		background: var(--background-dark);
+	}
+
+	.tab .inputs .input_box_field i{
+		font-size: var(--h2-font-size);
+	}
+
+	.tab .inputs .input_box_field input{
+		width: 100%;
+		height: 2.5rem;
+		background: none;
+		border: none;
+		outline: none;
+		font-size: var(--h3-font-ssize);
+		color: var(--link-color);
+	}
+
+	.tab .inputs .input_radio_field{
+		display: flex;
+		width: 30%;
+		gap: 1rem;
+		justify-content: center;
+		align-items: center;
+	}
+
+	.tab .inputs .input_radio_field label{
+		cursor: pointer;
+	}
+
+
+
+/*#endregion  */
+
+
+
+
+
+
+
+
+
 /*#region ========================		Responsiveness	================================ */
 
 
@@ -1551,6 +1732,37 @@ form  .inputCheckBox input{
 			padding: 4rem 0;
 		}
 
+
+		/* ========================		 User Account Page 	======================*/
+		.user_account_detail{
+			flex-direction: column;
+		}
+
+		.user_account_detail > div{
+			width: 100%;
+		}
+
+		.balance_record h2{
+			font-size: var(--h3-font-ssize);
+		}
+
+		.tab .balance_record .links{
+			flex-direction: column;
+			gap: 2rem;
+		}
+
+		.tab .inputs{
+			flex-direction: column;
+		}
+
+		.tab .inputs .input_box_field{
+			width: 100%;
+		}
+
+		.tab .inputs .input_radio_field{
+			width: 100%;
+			justify-content: flex-start;
+		}
 		
 	}
 	
@@ -1718,6 +1930,22 @@ form  .inputCheckBox input{
 
 		.home_members .row{
 			gap: 4rem;
+		}
+
+
+		/* ========================		 My Account Page 	====================== */
+
+		.balance_record .balance{
+			margin-top: 2rem;
+			flex-direction: column;
+		}
+
+		.balance_record h2{
+			text-align: center;
+		}
+
+		.user_account_tab_contaner{
+			padding: 2rem 0;
 		}
 		
 	}
